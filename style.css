@@ -1,0 +1,940 @@
+/* here i have attach the font which font we are using in our project from the font awesome . */
+
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --background-color: #fbfbfb;
+    --green-background-color:#14BF98;
+    --dark-green-color:#113448;
+    --light-green-color:#14Bf98;
+    --white-color:#ffffff;
+    --dark-grey-color:#484A46;
+    --light-grey-color:#787976;
+    --disabled-color:#E9ECEF;
+    --dark-white-color:#DFE5EC;
+}
+
+body{
+    padding:0;
+    margin:0;
+    background-color: var(--background-color);
+
+}
+
+h1,h2,h3,h4,h5,h6,p,span,button, li{
+   font-family: 'Montserrat', 'sans-serif';
+
+}
+
+.home{
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),url("./image-1.jpg");
+    min-height: 100vh;
+    background-position: center;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+       /* for text in 1st-page come at center we use this  */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:var(--white-color);
+    gap: 0rem;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    position:fixed;
+    justify-content: space-between;
+    width:100%;
+    box-sizing: border-box;
+    top:0;
+    left:0;
+    padding:1rem 3rem;
+    align-items: center;
+    color:var(--white-color);
+    /* here we have use z-index because we want our nav bar visible atnthe all the section/page so we use the z-indexas 100 very huge value   */
+    z-index: 100;
+    /* background-color: var(--dark-green-color); */
+
+}
+
+
+nav a{
+    text-decoration: none;
+    color:var(--white-color);
+    transition: color 0.3s ease-in-out;
+}
+
+/* this visited simplify that ki jn hm a par hover krrhe i.e intro section me ja rhe jb vo viist krrha toh uska color white hi rhga  */
+
+nav a:visited{
+    color:var(--white-color);
+
+}
+
+nav a:hover{
+    color:var(--light-green-color);
+
+}
+
+ 
+nav img{
+    height:2rem;
+}
+
+ nav ul .icon{
+    background-color: var(--light-green-color);
+    padding: 0.75rem;
+    cursor: pointer;
+
+    /* here we have use the haxagon shape in our nav bar for that we use the clip-path method where we copy that code from clip-path site and paste here */
+
+    clip-path:polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+nav ul .icon:hover{
+    background-color: var(--white-color);
+
+}
+ nav ul .icon:hover a{
+   color: var(--light-green-color);
+
+ }
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style:none;
+    margin:0;
+    padding:0;
+    gap:1rem;
+    text-transform: capitalize;
+    align-items: center;
+
+    /* width:100%;
+    box-sizing: border-box; */
+}
+
+button{
+    cursor:pointer;
+    border: 1px solid var(--light-green-color);
+    background-color: var(--light-green-color);
+    color: var(--white-color);
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border-radius:5px;
+    transition:all 0.5s ease-in-out;
+   font-weight: 700;
+   font-size: 0.75rem;
+   /* margin-top: 5px; */
+
+}
+
+button:hover{
+    background-color: transparent;
+    color:var(--light-green-color);
+}
+
+.home h1{
+    text-transform: uppercase;
+    margin:0;
+    font-size:4rem;
+}
+ .home p{
+    font-size: 1.3rem;
+    width:60%;
+    /* text-align: center;
+    justify-content: center; */
+    margin: auto;
+    
+}
+  .home button{
+    margin: auto;
+    margin-top: 30px;
+  }
+
+.intro{
+    display: flex;
+    margin: 10vh 7vw;
+    /* to make our ui responsive we use flex-wrap in which on seeing in phone our girl-image come at top and content at below so for that we use flex-wrap */
+
+    flex-wrap: wrap;
+    /* yha space-between den se kya hoga ki hmare girl-image and content ki bich mm space aajayega  */
+
+    justify-content: space-between;
+    /* min-width: 300px; */
+    
+
+}
+
+/* yha hm image ki height set krne ke liye phle div ke height set krrhe taki vo image uss given div ki height me adjust ho jaye  */
+
+.intro div{
+    height:60vh;
+    width:500px;
+    /* yha overflow hidden isliye dena hoga bcz jb hm scale(1.2)set krrhe to vo apne parent se bhar aajarha image so usko uss div mm rakhne ke liye hm overflow hidden use krenge or jb hidden kiya to vo image apne jo container mm zoom-in and zoom-out horha tha but that was not smooth so for smootheness we use the transition property in which set the time as 0.5s and ease-in-out*/
+    /* so its imp to set the width and height of the div so image can fir on them */
+
+    overflow: hidden;
+}
+
+.intro h5{
+    text-transform: uppercase;
+    color:var(--light-green-color);
+    font-weight: 500;
+
+}
+
+.intro div img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.intro div img:hover{
+
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out;
+
+}
+
+.intro p{
+    color:#787976;
+
+}
+
+.services{
+    padding: 5rem 0rem;
+
+}
+
+.service-title{
+    color:var(--light-green-color);
+}
+
+.services > span{
+  /* span tag is inline so hme aagr ussee screen ke middle me laga hai to hme span ko phle block banana hoga taki vo screen ki puri width lele and then jb hme text-align center krenge to vo center mmm aajeyag  */
+
+    display:block;
+    text-align: center;
+    color:var(--light-grey-color);
+
+}
+
+.services > h3{
+    text-align: center;
+    font-size: 1.8rem;
+    color:var(--dark-grey-color);
+
+}
+
+.services .service-list-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 3rem 10vw;
+    align-items: start;
+
+}
+
+.services .service-list-container .service-items{
+    width: 30%;
+    flex-grow:0;
+    flex-shrink:0;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    border: 1px solid var(--light-grey-border-color);
+
+}
+
+.services .service-items img{
+    width:100%;
+    height:15rem;
+    object-fit: cover;
+    object-position: center;
+    /* here we have given border radius to only two corner i.e tp-left, top-right only  */
+
+    border-radius: 5px 5px 0 0;
+
+} 
+.services .service-items h4{
+    text-align: center;
+    font-size: 1.5rem;
+    color:var(--dark-grey-color);
+    padding:0.5rem 2rem;
+}
+.services .service-items p{
+    line-height: 1.5rem;
+    color:var(--light-grey-color);
+    padding:0.5rem 2rem;
+}
+
+.services .service-items ul{
+     margin: 0;
+    line-height: 1.5rem;
+    color:var(--light-grey-color);
+    padding: 0.5rem 2rem;
+    list-style-type: none;
+}
+
+.services .service-items ul li:before{
+   /* here we have use the unicode i.e 25a0 for the list-styling a sqare. thie 25a0 is the unicode for the black square  */
+
+    content:'\25a0';
+    color:var(--light-green-color);
+    margin-right: 5px;
+    font-size: 1.25rem;
+}
+ 
+.services .service-items h6{
+    font-size: 1.2rem;
+    color: var(--dark-grey-color);
+    text-align: center;
+    padding: 0.5rem 2rem;
+
+}
+  
+.services h6 .price{
+    color:var(--light-green-color);
+
+}
+
+.services .service-items button{
+    top:0;
+    left:50%;
+    position:relative;
+    /* ye transform use krne se hmara button center me hai border line ke so for that hme translate property lagana hh -50% means ko x-axis se opposite m aajaye and y-axis se 50% le  */
+    transform: translate(-50%, 50%);
+}
+
+.services .proportions{
+    display:flex;
+    flex-direction: row;
+    background-color: var(--white-color);
+    /* margin-top:5%; */
+}
+
+.services .proportions img{
+  width: 50%;
+  height: 35rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.services .proportions .content{
+    width:100%;
+    box-sizing: border-box;
+}
+.services .proportions-1 .content{
+    padding: 5rem 20vh 5rem 5rem;
+
+}
+.services .proportions-2 .content{
+    padding: 5rem 5rem 5rem 20vh;
+
+}
+.services .proportions .content h3{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color:var(--light-grey-color);
+
+}
+
+.services .testimonials{
+    padding: 5rem 20vw;
+
+}
+
+.services .testimonials h3{
+    color:var(--dark-grey-color);
+    text-align: center;
+    font-size: 1.75rem;
+
+}
+.services .testimonials p{
+    color:var(--light-grey-color);
+    text-align: center;
+
+}
+
+.services .testimonial-list-container{
+    display: flex;
+    flex-direction: row;
+    gap:2.5rem;
+    /* here we want our items should be scrolling so e use the overflow -x means overflow our container in x-direction and it has scrolling feautre  */
+
+    overflow-x: scroll;
+    padding:3rem 0;
+}
+
+.services .testimonial-items{
+    width:30%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+
+.italic{
+    font-style: italic;
+
+}
+
+.services .testimonials img{
+    width: 6rem;
+    border-radius: 50%;
+}
+.services .testimonial-items p{
+    margin: 0;
+    line-height: 1.5rem;
+    color:var(--light-grey-color);
+}
+.services .testimonials h4{
+    margin:0;
+}
+
+.sub-intro2{
+    display:flex;
+    margin: 10vh 7vw;
+    /* hmne yha justify-content me flex-start isliye kiya bcz agr  space-between krenge toh vo hexagon pura end tak lag ja rha but hme end tak ni chiaye hme usk phle hi chaiye so hme flex-start krna hoga  */
+    justify-content: space-between;
+    gap: 10px;
+    /* aagr hme apne screen ko responisive banana hai medium and small screen ke liye so hme flex wrap use krna hoga  */
+    flex-wrap: wrap;
+}
+
+.sub-intro2  > div{
+    /* hm ye isliye de rhe width bcz aagr screen ki width min 300px hone pe vo aisa hoga  */
+   width:300px;
+}
+
+.hexagon > img{
+    width:100px;
+    height:100px;
+}
+
+.hexagon{
+    /* yha hme icon ko uss hexagon ke middle me lana hai so hme phle hexagon ko position dena hoga uske according hmara icon set hoga so isliye hmne hexagon ko relative diya  */
+
+    position: relative;
+}
+.hexagon > i{
+   /* yha hmne icon ko position dena hoga hmne hexagon ka position phle relative diya taki icon ko absolute denge toh apne 1st parent position elemet  ke accor. change hoga  */
+
+    position: absolute;
+
+    /* hme icon ko middle me lagana hai so hmne icon ko top se nad left se px me set kiya  */
+
+    top:37px;
+    left:35px;
+    font-size:30px;
+    color:var(--white-color);
+
+}
+
+.sub-intro-content{
+    color: var(--light-grey-color);
+}
+
+.call_me{
+    padding:5rem 20vw;
+    background-color: var(--dark-green-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.call_me .content, .call_me .form{
+    color:var(--white-color);
+    width:45%;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+}
+.section-title{
+    color:var(--light-green-color);
+}
+
+.call_me .content h3{
+   font-size: 1.5rem;
+   font-weight: 800;
+   
+}
+.call_me .content p{
+    line-height: 1.5rem;
+    color:var(--light-grey-border-color);
+
+}
+
+.call_me .content ul{
+    padding:0;
+    list-style-type: none;
+}
+.call_me .content ul li:before{
+    /* hmne content ka use isliye kiya bcz yha pr hme jo square lga hua hh vo color hai usme green so hme e unicode use krna hoga  */
+
+    content:'\25a0';
+    color:var(--light-green-color);
+    margin-right: 5px;
+    font-size: 1.25rem;
+}
+
+.underline{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.call_me form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.call_me form .terms_container label{
+    color:var(--light-grey-border-color);
+}
+.call_me form input, .call_me select{
+    background-color: #2A5D77;
+    color:var(--white-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--form-input-background-color);
+}
+.project{
+    padding:5rem 20vw;
+    background-color: var(--white-color);
+}
+.project > span, .project > h3{
+    display: block;
+    text-align: center;
+}
+
+.project > span{
+    margin-bottom: 10px;
+}
+.project > h3{
+    color:var(--dark-grey-color);
+    font-size: 1.75rem;
+    margin: 0;
+}
+.project .category-list-container ul{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  /* overflow-x: scroll; */
+  padding: 3rem 0;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+}
+
+.project .category-list-container ul button{
+    background-color: #F1F4F7;
+    color: var(--dark-grey-color);
+    border:1px solid var(--light-grey-border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0;
+
+}
+.project .category-list-container ul button:hover{
+    background-color: var(--light-green-color);
+    color: var(--white-color);
+}
+
+.project .project-list-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 3rem;
+}
+
+.project .project-list-container .project-item{
+  object-fit: cover;
+  object-position: center;
+  background-position: center;
+  aspect-ratio: 1/1;
+}
+
+.project .project-item.p-1{
+    background-image: url("project-1.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-2{
+    background-image: url("project-2.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-3{
+    background-image: url("project-3.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-4{
+    background-image: url("project-1.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-1{
+    background-image: url("project-4.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-5{
+    background-image: url("project-5.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-6{
+    background-image: url("project-6.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-7{
+    background-image: url("project-7.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+.project .project-item.p-8{
+    background-image: url("project-8.jpg");
+    /* height: 200px;
+    width:200px; */
+}
+
+.project .project-item.p-1:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-2:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-3:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-4:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-5:hover{
+/*     
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-6:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-7:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+.project .project-item.p-8:hover{
+    
+    /* transform: scale(1.2);
+    transition: 0.5s ease-in-out; */
+    cursor: pointer;
+}
+
+.team{
+    padding: 5rem 20vw;
+    background-color: var(--background-color);
+}
+
+.team > h4{
+    color: var(--dark-grey-color);
+    font-size:1.75rem;
+    text-align: center;
+}
+.team> p{
+  color:var(--light-grey-color);
+  text-align: center;
+  line-height: 1.5rem;
+}
+.team .team-member-list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+.team .team-member-list-container .team-member-list-item{
+    width:20%;
+    flex-grow: 0;
+    flex-wrap: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 0rem; */
+
+}
+.team .team-member-list-item img{
+    width:100%;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+}
+.team .team-member-list-item p{
+    color:var(--light-grey-color);
+    line-height:1.5rem;
+}
+.team .team-member-list-item h5{
+    color:var(--dark-grey-color);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.team .team-member-list-item .socials span{
+    background-color: var(--light-green-color);
+    padding: 0.75rem;
+    cursor:pointer;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+}
+.team .team-member-list-item .socials span:hover{
+    background-color: var(--white-color);
+    color:var(--light-green-color);
+}
+
+.about{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10vh 7vw;
+    justify-content: space-around;
+
+  }
+  
+  .about > div{
+    width: 500px;
+  }
+
+  .about > .about-image img{
+    height:380px;
+    border-radius: 4px;
+
+  }
+  
+  .about-content > h6, .contact > div > h6{
+    color: var(--light-green-color);
+    text-transform: uppercase;
+    font-weight: 500;
+  
+  }
+  
+  .about-content > h2, .contact > div > h2{
+    color: var(--dark-gray-color);
+    margin-top: -10px;
+  }
+  
+  .about-content>p, .contact>div>p, .contact>div>.location, .contact>div>.contacts{
+    color: var(--light-gray-color);
+    line-height: 1.5rem;
+  }
+  
+  .about-content>ul{
+    list-style: none;
+    line-height: 1.8rem;
+  }
+  
+  .about-content>ul>li{
+    position: relative;
+    color: var(--light-gray-color);
+  }
+  
+
+  /* yha hmlog ek psedu element (::)ka use krhe yha ye define krrha ki jo li ka before jo likha hai content usko change krna hh */
+
+  .about-content>ul>li::before{
+    content: "◼";
+    color: var(--green-background-color);
+    position: absolute;
+
+    /* yha maine square icon ko middle me laya hh by giving left, bottom */
+
+    left: -16px;
+    bottom: 3px;
+  }
+  
+  .about-feedback{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .about-feedback>div>h1{
+    color: var(--green-background-color);
+    font-size: 45px;
+  }
+  
+  .about-feedback>div>div>p{
+    color: var(--light-gray-color);
+    margin-left: 8px;
+  }
+  
+  .about-feedback>div{
+    display: flex;
+    align-items: center;
+    line-height: 0px;
+  }
+  
+  
+  .contact{
+    margin: 10vh 7vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .contact-form, .contact-details{
+    width: 500px;
+  }
+  
+  .icons{
+    color: var(--green-background-color);
+  }
+  
+  .contacts>span{
+    text-decoration: underline;
+  }
+  
+  .location,.contacts{
+    margin-top: 10px;
+  }
+  
+  
+  .hexagon-group{
+    display: flex;
+    justify-content: flex-start;
+  
+  }
+  .contact .hexagon{
+    background-image: url(https://www.free-css.com/assets/files/free-css-templates/preview/page259/aria/assets/images/hexagon-green.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: 2vh 0px;
+    margin-left: 8px;
+   transform: opacity 3s ease-in-out;
+  }
+  
+  .contact .hexagon>i{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 1.5rem;
+  }
+  
+  
+  .hexagon:hover{
+    opacity: 0.1;
+  }
+  
+  .contact-form input[type="text"],input[type="email"]
+  ,textarea
+  {
+    outline: none;
+    border: 1px solid #dadada;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #787976;
+    width: 100%;
+    display: block;
+    padding: 0.8rem 1rem;
+    margin: 1rem 0px;
+  }
+  
+  .checkbox{
+    display: inline;
+  }
+  
+  .contact-form span{
+    color: var(--light-gray-color);
+    font-size: 0.8rem;
+  }
+  
+  .contact-form button{
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .contact-form>form>span>span{
+    text-decoration: underline;
+  }
+  
+  
+  footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-green-color);
+    padding: 5vh 7vw;
+    color: var(--dark-white-color);
+  }
+  footer a{
+    text-decoration: none;
+    color: var(--dark-white-color);
+    display: block;
+    text-decoration: underline;
+    line-height: 1.9rem;
+  }
+  
+  footer>div:nth-child(1){
+    width: 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
